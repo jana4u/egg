@@ -31,3 +31,7 @@ gem 'jquery-rails', '~> 1.0.13'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.6.1'
+end
