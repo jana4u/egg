@@ -7,6 +7,7 @@ gem 'rake', '~> 0.8.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.2.11'
+gem 'jquery-rails', '~> 1.0.13'
 
 # Use unicorn as the web server
 # gem 'unicorn'
