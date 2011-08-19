@@ -34,4 +34,7 @@ gem 'jquery-rails', '~> 1.0.13'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.6.1'
+  gem 'cucumber-rails', '~> 1.0.2'
+  gem 'database_cleaner', '~> 0.6.7'
+  gem 'launchy', '~> 2.0.5'
 end
