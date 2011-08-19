@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110819162207) do
+ActiveRecord::Schema.define(:version => 20110819184038) do
+
+  create_table "characters", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "diary_days", :force => true do |t|
+    t.integer  "character_id"
+    t.date     "diary_date"
+    t.integer  "week_number"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "diary_screenshots", :force => true do |t|
+    t.integer  "diary_day_id"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
