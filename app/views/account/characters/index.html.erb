@@ -1,0 +1,23 @@
+<h1>Listing Characters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @characters.each do |character| %>
+  <tr>
+    <td><%= character.name %></td>
+    <td><%= link_to 'Show', account_character_path(character) %></td>
+    <td><%= link_to 'Edit', edit_account_character_path(character) %></td>
+    <td><%= link_to 'Destroy', account_character_path(character), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Character', new_account_character_path %>

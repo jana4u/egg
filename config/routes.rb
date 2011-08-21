@@ -1,4 +1,8 @@
 Egg::Application.routes.draw do
+  namespace :account do
+    resources :characters
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation:
