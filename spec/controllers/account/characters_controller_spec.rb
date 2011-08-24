@@ -28,7 +28,7 @@ describe Account::CharactersController do
   # Character. As you add validations to Character, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    Factory.attributes_for(:character)
+    Factory.attributes_for(:character, :user => @user)
   end
 
   describe "GET index" do

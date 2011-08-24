@@ -11,6 +11,7 @@ end
 
 Factory.define :character do |f|
   f.name { Factory.next(:character_name) }
+  f.association :user
 end
 
 Factory.sequence :character_name do |n|
