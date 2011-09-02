@@ -1,0 +1,21 @@
+<%= form_for([:account, @character, @diary_day]) do |f| %>
+  <% if @diary_day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@diary_day.errors.count, "error") %> prohibited this account_diary_day from being saved:</h2>
+
+      <ul>
+      <% @diary_day.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :diary_date %><br />
+    <%= f.date_select :diary_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

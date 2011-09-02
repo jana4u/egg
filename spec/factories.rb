@@ -17,3 +17,12 @@ end
 Factory.sequence :character_name do |n|
   "Name#{n}"
 end
+
+Factory.define :diary_day do |f|
+  f.diary_date { Factory.next(:diary_date) }
+  f.association :character
+end
+
+Factory.sequence :diary_date do |n|
+  n.days.since
+end

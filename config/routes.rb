@@ -1,6 +1,8 @@
 Egg::Application.routes.draw do
   namespace :account do
-    resources :characters
+    resources :characters do
+      resources :diary_days
+    end
   end
 
   devise_for :users

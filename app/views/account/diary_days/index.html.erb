@@ -1,0 +1,23 @@
+<h1>Listing diary_days</h1>
+
+<table>
+  <tr>
+    <th>Diary date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @diary_days.each do |diary_day| %>
+  <tr>
+    <td><%= diary_day.diary_date %></td>
+    <td><%= link_to 'Show', account_character_diary_day_path(@character, diary_day) %></td>
+    <td><%= link_to 'Edit', edit_account_character_diary_day_path(@character, diary_day) %></td>
+    <td><%= link_to 'Destroy', account_character_diary_day_path(@character, diary_day), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Diary day', new_account_character_diary_day_path(@character) %>
