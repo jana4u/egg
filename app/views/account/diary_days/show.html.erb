@@ -5,6 +5,10 @@
   <%= @diary_day.diary_date %>
 </p>
 
+<p>
+  <b>Week number:</b>
+  <%= @diary_day.week_number %>
+</p>
 
 <%= link_to 'Edit', edit_account_character_diary_day_path(@character, @diary_day) %> |
 <%= link_to 'Back', account_character_diary_days_path(@character) %>
