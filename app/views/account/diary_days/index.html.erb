@@ -4,6 +4,7 @@
   <tr>
     <th>Diary date</th>
     <th>Week number</th>
+    <th>Screenshots</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= diary_day.diary_date %></td>
     <td><%= diary_day.week_number %></td>
+    <td><%= diary_day.diary_screenshots.size %></td>
     <td><%= link_to 'Show', account_character_diary_day_path(@character, diary_day) %></td>
     <td><%= link_to 'Edit', edit_account_character_diary_day_path(@character, diary_day) %></td>
     <td><%= link_to 'Destroy', account_character_diary_day_path(@character, diary_day), :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,12 +1,12 @@
-<%= form_for([:account, @character, @diary_day]) do |f| %>
+<%= form_for([:account, @character, @diary_day], :html => {:multipart => true}) do |f| %>
   <% if @diary_day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@diary_day.errors.count, "error") %> prohibited this account_diary_day from being saved:</h2>
 
       <ul>
-      <% @diary_day.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @diary_day.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -14,6 +14,27 @@
   <div class="field">
     <%= f.label :diary_date %><br />
     <%= f.date_select :diary_date %>
+  </div>
+  <div class="field">
+    Screenshots
+    <ol>
+      <%= f.fields_for :diary_screenshots do |diary_screenshot_form| %>
+        <% if diary_screenshot_form.object.persisted? || diary_screenshot_form.object.file.cached? %>
+          <li>
+            <%= diary_screenshot_form.hidden_field :file_cache %>
+            <%= diary_screenshot_form.label :_destroy, diary_screenshot_form.object.new_record? ? diary_screenshot_form.object.file.cache_name : diary_screenshot_form.object.file_identifier %><br />
+            <%= diary_screenshot_form.check_box :_destroy %>
+            <%= diary_screenshot_form.label :_destroy %><br />
+          </li>
+        <% end %>
+      <% end %>
+
+      <% (5 - f.object.diary_screenshots_count).times do |n| %>
+        <li>
+          <%= file_field_tag "diary_day[images][]", { :id => "images#{n}", :multiple => "multiple" } %><br />
+        </li>
+      <% end %>
+    </ol>
   </div>
   <div class="actions">
     <%= f.submit %>

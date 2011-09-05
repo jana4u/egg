@@ -24,5 +24,5 @@ Factory.define :diary_day do |f|
 end
 
 Factory.sequence :diary_date do |n|
-  n.days.since
+  n.days.ago.to_date
 end

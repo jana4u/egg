@@ -10,5 +10,16 @@
   <%= @diary_day.week_number %>
 </p>
 
+<p>
+  <b>Screenshots:</b>
+</p>
+<ol>
+  <% @diary_day.diary_screenshots.each do |screenshot| %>
+    <li>
+      <%= link_to(screenshot.file_identifier, screenshot.file.url) %><br />
+    </li>
+  <% end %>
+</ol>
+
 <%= link_to 'Edit', edit_account_character_diary_day_path(@character, @diary_day) %> |
 <%= link_to 'Back', account_character_diary_days_path(@character) %>

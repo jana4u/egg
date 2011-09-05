@@ -9,6 +9,7 @@ gem 'rake', '~> 0.8.7'
 gem 'mysql2', '~> 0.2.11'
 gem 'jquery-rails', '~> 1.0.13'
 gem 'devise', '~> 1.4.2'
+gem 'carrierwave', '~> 0.5.7'
 
 # Use unicorn as the web server
 # gem 'unicorn'
